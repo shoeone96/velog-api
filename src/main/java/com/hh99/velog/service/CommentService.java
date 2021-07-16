@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class CommentService {
@@ -20,5 +23,9 @@ public class CommentService {
         );
         comment.update(commentRequestDto);
         return id;
+    }
+
+    public List<Comment> readComments(Long articleId){
+        return commentRepository.findAllByArticleIdOrderByCreatedAtDesc(articleId);
     }
 }
