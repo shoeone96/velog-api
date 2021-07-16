@@ -24,8 +24,8 @@ public class CommentService {
         comment.update(commentRequestDto);
         return id;
     }
-
-    public List<Comment> readComments(Long articleId){
-        return commentRepository.findAllByArticleIdOrderByCreatedAtDesc(articleId);
-    }
+//
+//    public List<Comment> readComments(Long articleId){
+//        return commentRepository.findAllByArticleIdOrderByCreatedAtDesc(articleId);
+//    }
 }
