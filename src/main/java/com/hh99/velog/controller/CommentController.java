@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -21,7 +20,6 @@ public class CommentController {
     public List<Comment> getAllComment() {
         return commentRepository.findAllByOrderByModifiedAtDesc();
     }
-
 
     @GetMapping("/comment/{articleId}")     // 게시글 별 댓글 불러오기
     public List<Comment> readComments(@PathVariable Long articleId) {
